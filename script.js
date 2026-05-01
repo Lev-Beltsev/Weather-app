@@ -1,6 +1,6 @@
 // API
 
-const link = "http://api.weatherstack.com/current?access_key=ВАШКЛЮЧ"; 
+const link = "http://api.weatherstack.com/current?access_key=32b828803275d566701ab4c7a4de1f22"; 
 
 // Получаю данные из HTML 
 
@@ -182,9 +182,10 @@ const city = document.getElementById("city");
 };
 
 const handleInput = (e) => {
+  const { value } = e.target;  // деструктуризация
   store = {
     ...store,
-    city: e.target.value,
+    city: value,
   };
 };
 
@@ -201,6 +202,7 @@ const handleSubmit = (e) => {
 
 form.addEventListener("submit", handleSubmit);
 textInput.addEventListener("input", handleInput);
+
 
 fetchData();
  
